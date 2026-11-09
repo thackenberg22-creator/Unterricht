@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geo-Labor 11</title>
+<script>
+  var ZIEL = "https://claude.ai/artifact/PMoedF4PrFJvy8CPaHfvvV";
+  location.replace(ZIEL);
+  setTimeout(function () { document.getElementById("hilfe").style.display = "block"; }, 3000);
+  function kopieren() {
+    var m = document.getElementById("meldung");
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(ZIEL).then(function () { m.textContent = "Link kopiert – jetzt in Safari in die Adresszeile einfügen."; },
+        function () { m.textContent = ZIEL; });
+    } else { m.textContent = ZIEL; }
+  }
+</script>
+<style>
+  :root { --bg:#f6f4ee; --text:#1f2a2b; --akzent:#2f6f73; --karte:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1b2324; --text:#eef2f2; --akzent:#7fc4c8; --karte:#253031; } }
+  body { margin:0; background:var(--bg); color:var(--text); font:18px/1.5 -apple-system, system-ui, sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:40px 16px; text-align:center; }
+  #hilfe { display:none; background:var(--karte); border-radius:16px; padding:24px 20px; margin-top:24px; text-align:left; }
+  .knopf { display:block; width:100%; box-sizing:border-box; margin:12px 0; padding:18px; border-radius:12px; border:2px solid var(--akzent);
+           background:var(--akzent); color:#fff; font-size:20px; font-weight:600; text-align:center; text-decoration:none; cursor:pointer; }
+  .knopf.zwei { background:transparent; color:var(--akzent); }
+  ol { padding-left:22px; }
+  #meldung { font-weight:600; color:var(--akzent); word-break:break-all; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Geo-Labor 11</h1>
+  <p>Das Labor wird geöffnet …</p>
+  <div id="hilfe">
+    <a class="knopf" href="https://claude.ai/artifact/PMoedF4PrFJvy8CPaHfvvV">Labor öffnen</a>
+    <button class="knopf zwei" type="button" onclick="kopieren()">Link kopieren</button>
+    <p id="meldung"></p>
+    <p><strong>Öffnet sich stattdessen die Claude-App?</strong></p>
+    <ol>
+      <li>Tippe auf „Link kopieren“.</li>
+      <li>Öffne <strong>Safari</strong>.</li>
+      <li>Tippe oben in die Adresszeile, füge den Link ein und tippe auf „Öffnen“.</li>
+    </ol>
+  </div>
+</main>
+</body>
+</html>
